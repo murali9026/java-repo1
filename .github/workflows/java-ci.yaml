@@ -11,7 +11,7 @@ on:
 
 jobs:
   run-java-build:
-    uses: ./.github/workflows/java-build.yaml  # Call the reusable workflow
+    uses: ./java-build.yaml  # Call the reusable workflow
     with:
       java-version: "11"  # Override the default Java version to 17
       build-command: "javac HelloWorld.java && java HelloWorld"  # Build command
