@@ -1,0 +1,32 @@
+name: Java Build Workflow
+
+on:
+  workflow_call:
+    inputs:
+      java-version:
+        description: "The Java version to use"
+        required: true
+        default: "11"
+      build-command:
+        description: "Command to build the Java project"
+        required: true
+        default: "javac HelloWorld.java && java HelloWorld"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Java version based on input
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ inputs.java-version }}
+
+      # Build and run the Java project based on input command
+      - name: Build and Run Java Application
+        run: ${{ inputs.build-command }}
