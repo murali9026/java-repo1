@@ -30,3 +30,4 @@ jobs:
       # Build and run the Java project based on input command
       - name: Build and Run Java Application
         run: ${{ inputs.build-command }}
+
