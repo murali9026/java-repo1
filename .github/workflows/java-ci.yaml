@@ -18,5 +18,5 @@ jobs:
 
       # Run Java application (assuming the build is already done)
       - name: Run Java Application
-        run: java -cp src/main/java/HelloWorld.java YourMainClass  # Adjust classpath and main class accordingly
+        run: java -cp java-repo1/src/main/java/HelloWorld.java YourMainClass  # Adjust classpath and main class accordingly
 
