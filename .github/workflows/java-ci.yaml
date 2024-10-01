@@ -14,9 +14,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
+      # Set up Java version
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: "17"
+          distribution: "temurin"
 
-      # Run Java application (assuming the build is already done)
+      # Build the project if necessary (add this step if the build is not done yet)
+      # - name: Build with Maven
+      #   run: mvn clean package  # Uncomment if using Maven to build
+
+      # List Target Directory (optional)
+      - name: List Target Directory
+        run: ls -R java-repo1/target  # Check if target directory exists
+
+      # Run Java application (use the correct class name)
       - name: Run Java Application
-        run: java -cp java-repo1/src/main/java/HelloWorld.java YourMainClass  # Adjust classpath and main class accordingly
+        run: java -cp java-repo1/target/classes HelloWorld  # Use the name of your main class
+
 
