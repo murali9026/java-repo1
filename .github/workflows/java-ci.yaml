@@ -30,11 +30,11 @@ jobs:
       #   run: mvn clean package  # Uncomment if using Maven to build
 
       # List Target Directory (optional)
-      - name: List Target Directory
-        run: ls -R java-repo1/target  # Check if target directory exists
+     # - name: List Target Directory
+      #  run: ls -R java-repo1/target  # Check if target directory exists
 
       # Run Java application (use the correct class name)
-      - name: Run Java Application
-        run: java -cp java-repo1/target/classes HelloWorld  # Use the name of your main class
+     # - name: Run Java Application
+      #  run: java -cp java-repo1/target/classes HelloWorld  # Use the name of your main class
 
 
